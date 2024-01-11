@@ -50,13 +50,19 @@ if __name__ == "__main__":
     argument_parser.add_argument("--file", type=str, required=True)
     argument_parser.add_argument("--type", type=str, required=True)
     argument_parser.add_argument("--export", action="store_true")
+    argument_parser.add_argument("--export_dir", type=str)
     arguments = argument_parser.parse_args()
 
     backup_file: dict = open_file(arguments.file)
 
+    if arguments.export_dir:
+        export_dir: str = arguments.export_dir
+    else:
+        export_dir: str = "export"
+
     if arguments.export:
         match str(arguments.type).lower():
             case "quillpad":
-                quillpad.export(backup_file)
+                quillpad.export(backup_file, export_dir)
             case _:
                 log_error(f"Must provide a type when converting.")
