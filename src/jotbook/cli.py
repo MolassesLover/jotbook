@@ -45,7 +45,7 @@ def get_extension(file: str) -> file_extension:
     return extension
 
 
-if __name__ == "__main__":
+def main():
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument("--file", "-f", type=str, required=True)
     argument_parser.add_argument("--type", "-t", type=str, required=True)
@@ -66,3 +66,6 @@ if __name__ == "__main__":
                 quillpad.export(backup_file, export_dir)
             case _:
                 log_error(f"Must provide a type when converting.")
+
+if __name__ == "__main__":
+    main()

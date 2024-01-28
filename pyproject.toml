@@ -1,18 +1,23 @@
 [project]
-name = "note-utils"
+name = "jotbook"
 version = "0.1.0"
-description = "converts note files to markdown"
+description = "A library and command-line tool to manage notes from various applications."
+
 authors = [
-    {name = "___", email = "___"},
+    {name = "MolassesLover"}
 ]
+
 dependencies = [
     "pyyaml>=6.0.1",
     "colorama>=0.4.6",
 ]
+
 requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.scripts]
+jotbook = "jotbook:cli.main"
 
 [tool.pdm]
 distribution = false
