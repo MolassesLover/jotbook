@@ -47,10 +47,10 @@ def get_extension(file: str) -> file_extension:
 
 if __name__ == "__main__":
     argument_parser = argparse.ArgumentParser()
-    argument_parser.add_argument("--file", type=str, required=True)
-    argument_parser.add_argument("--type", type=str, required=True)
-    argument_parser.add_argument("--export", action="store_true")
-    argument_parser.add_argument("--export_dir", type=str)
+    argument_parser.add_argument("--file", "-f", type=str, required=True)
+    argument_parser.add_argument("--type", "-t", type=str, required=True)
+    argument_parser.add_argument("--export", "-e", action="store_true")
+    argument_parser.add_argument("--export-dir", "-p", type=str)
     arguments = argument_parser.parse_args()
 
     backup_file: dict = open_file(arguments.file)
