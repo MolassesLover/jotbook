@@ -1,0 +1,18 @@
+[project]
+name = "note-utils"
+version = "0.1.0"
+description = "converts note files to markdown"
+authors = [
+    {name = "___", email = "___"},
+]
+dependencies = [
+    "pyyaml>=6.0.1",
+    "colorama>=0.4.6",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
